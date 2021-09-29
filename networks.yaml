@@ -1,0 +1,52 @@
+kusama:
+  provider: wss://kusama-rpc.polkadot.io/
+polkadot:
+  provider: wss://rpc.polkadot.io/
+nftmart:
+  provider: wss://mainnet.nftmart.io/rpc/ws
+  types: types/nftmart-staging-fork2.json
+nftmart-mainnet:
+  provider: wss://mainnet.nftmart.io/rpc/ws
+  types: types/nftmart-staging-fork2.json
+nftmart-staging:
+  provider: wss://staging-ws.nftmart.io/
+  types: types/nftmart-staging-fork2.json
+nftmart-staging-local:
+  provider: ws://127.0.0.1:9944/
+  types: types/nftmart-staging-fork2.json
+# nftmart-staging:
+#   provider: wss://staging-ws.nftmart.io/
+#   types: types/nftmart-staging.json
+# nftmart-staging-fork:
+#   provider: wss://staging-ws.nftmart.io/
+#   types: types/nftmart-staging-fork.json
+# nftmart-staging-fork2:
+#   provider: wss://staging-ws.nftmart.io/
+#   types: types/nftmart-staging-fork2.json
+# nftmart-staging-local:
+#   provider: ws://127.0.0.1:9944/
+#   types: types/nftmart-staging.json
+nftmart-staging-9999:
+  provider: ws://43.129.72.231:9999
+  types: types/nftmart-staging-fork2.json
+nftmart-dev:
+  provider: wss://dev-ws.nftmart.io/
+  types: types/nftmart-dev.json
+nftmart-dev-local:
+  provider: ws://127.0.0.1:9944/
+  types: types/nftmart-dev.json
+oak-testnet:
+  provider: ws://rpc.testnet.oak.tech
+  types: types/oak-testnet.json
+local:
+  provider: ws://127.0.0.1:9944/
+moonriver:
+  provider: wss://wss.moonriver.moonbeam.network
+acala:
+  provider: wss://mandala6.laminar.codes
+crust:
+  provider: wss://rpc.crust.network
+centrifuge:
+  provider: wss://fullnode.centrifuge.io
+# typesBundle: builtin
+# typesBundle: types/moonbeam.json

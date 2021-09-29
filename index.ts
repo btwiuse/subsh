@@ -1,98 +1,130 @@
-#!/usr/bin/env ts-node
+import { Command } from "commander";
+// import figlet from "figlet-promised";
+import { startRepl, runScript, run2Script, runSidecar } from "./src/commands";
+import { Package } from "./src/meta";
+import { banner } from "./src/banner";
 
-import program, { Command } from "commander";
-import Package from "./package.json";
-import {
-  showLatest,
-  showHelp,
-  demoWhich,
-  demoWhere,
-  demoMain,
-  demoArgv,
-  demoArgs,
-  demoDump,
-  demoEcho,
-  demoSleep,
-} from "./actions";
-import figlet from "figlet-promised";
-
-async function main(): Promise<void> {
-  program.name(Package.name);
+async function main() {
+  const program = new Command();
+  program.name("bob");
   program.version(Package.version);
-  program.description(`This is a template project that demonstrates how to distribute
-executable TypeScript snippets on npmjs.org without compilation to JavaScript.
-
-Please go to https://github.com/btwiuse/ts-node-shebang for instructions`);
+  program.description(
+    `The missing Polkadot.js API scripting environment that lets you have SLACK while BUIDLing around Substrate.`
+  );
+  // program.addHelpText("before", await figlet("SubGenius"));
+  program.addHelpText("before", banner);
   program
-    .command("latest")
-    .description("show latest version")
-    .action(() => {
-      showLatest();
-    });
-  program.addHelpText("before", await figlet("ts-node-shebang"));
-  program
-    .command("args")
-    .description("show program.args")
-    .action(() => {
-      demoArgs(program.args);
-    });
-  program
-    .command("which")
-    .description("show self filepath")
-    .action(() => {
-      demoWhich();
-    });
-  program
-    .command("main")
-    .description("show main filepath")
-    .action(() => {
-      demoMain();
-    });
-  program
-    .command("where")
-    .description("show self dirname")
-    .action(() => {
-      demoWhere();
-    });
-  program
-    .command("argv")
-    .description("show process.argv")
-    .action(() => {
-      demoArgv();
-    });
-  program
-    .command("dump")
-    .description("dump self content")
-    .action(() => {
-      demoDump();
-    });
-  program
-    .command("echo")
-    .description("echo args")
-    .option("-n, --no-newline", "exclude trailing new line")
-    .arguments("[string...]")
-    .action((args, opts, command) => {
-      // console.log('args', args);
-      // console.log('opts', opts);
-      let line = args.join(" ");
-      if (opts.newline) {
-        console.log(line);
+    .option(
+      "--chain <chain>",
+      "initialize polkadot api using default provider and types"
+    )
+    .option("--provider <provider>", "set custom ws/http provider")
+    .option(
+      "--types <types>",
+      "path to json file containing custom type definitions"
+    )
+    .arguments("[script] [args...]")
+    .action((script, args, opts) => {
+      if (script) {
+        run2Script(opts.chain || {provider: opts.provider, types: opts.types}, script, args);
       } else {
-        process.stdout.write(line);
+        // console.log(opts.chain || {provider: opts.provider, types: opts.types});
+        startRepl(opts.chain || {provider: opts.provider, types: opts.types});
       }
     });
   program
-    .command("sleep")
-    .description("wait a few seconds")
-    .arguments("[number]")
-    .action((args, opts, command) => {
-      let sec = 1;
-      if (args) {
-        sec = args[0];
-      }
-      demoSleep(sec);
+    .command("run")
+    .description("run <ts|mjs|js> script")
+    .arguments("<script> [args...]")
+    .action((script, args, _opts, { parent: { _optionValues: opts } }) => {
+      run2Script(opts.chain, script, args);
     });
-  program.parse(process.argv);
+//program
+//  .command("run")
+//  .description("run script against network")
+//  .arguments("<script>")
+//  .action((script, _opts, { parent: { _optionValues: opts } }) => {
+//    runScript(opts.chain, script);
+//  });
+  program
+    .command("repl")
+    .description("start repl")
+    .option("--provider <provider>", "set custom ws/http provider")
+    .option(
+      "--types <types>",
+      "path to json file containing custom type definitions"
+    )
+    .arguments("[script]")
+    .action((script, _opts, { parent: { _optionValues: opts } }) => {
+      if (script) {
+        runScript(opts.chain, script);
+      } else {
+        startRepl(opts.chain);
+      }
+    });
+  program
+    .command("sidecar")
+    .description("run api sidecar")
+    .option("--provider <provider>", "set custom ws/http provider")
+    .option(
+      "--types <types>",
+      "path to json file containing custom type definitions"
+    )
+    .option("--provider <provider>", "set custom ws/http provider")
+    .option("--port <port>", "listening port", '8080')
+    .action(({port}, { parent: { _optionValues: {chain} } }) => {
+      console.log(`serving ${chain} on ${port}`);
+      runSidecar(chain, port);
+    });
+  program
+    .command("deno")
+    .description("start repl in deno (if found in PATH)")
+    .option("--provider <provider>", "set custom ws/http provider")
+    .option(
+      "--types <types>",
+      "path to json file containing custom type definitions"
+    )
+    .arguments("[script]")
+    .action((script, _opts, { parent: { _optionValues: opts } }) => {
+      if (script) {
+        runScript(opts.chain, script);
+      } else {
+        startRepl(opts.chain);
+      }
+    });
+  program
+    .command("fuse")
+    .description("mount blockchain storage to a local dir")
+    .action((opts) => {});
+  program
+    .command("upload")
+    .description("upload file or dir to ipfs")
+    .action((opts) => {});
+  program
+    .command("fmt")
+    .description("format source code")
+    .action((opts) => {});
+  program
+    .command("complete")
+    .description("generate standalone ts script")
+    .action((opts) => {});
+  program
+    .command("keyring")
+    .description("manage local keyring")
+    .action((opts) => {});
+  program
+    .command("version")
+    .description("display version info")
+    .action((opts) => {});
+  program
+    .command("update")
+    .description("check for update")
+    .action((opts) => {});
+  try {
+    program.parse(process.argv);
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 void main();
