@@ -28,5 +28,5 @@ jobs:
         name: docker push
       - run: |
           docker tag btwiuse/subgenius:${{ github.sha }} btwiuse/subgenius
-          docker push
+          docker push btwiuse/subgenius
         name: docker tag latest
