@@ -177,8 +177,8 @@ export async function startRepl(network) {
   }
   let replServer = await createReplServer(initialPrompt);
 
-  // console.log('createReplServer')
-  if (isValid(network) || network.provider) {
+  // console.log('createReplServer', network)
+  if (network && (isValid(network) || network.provider)) {
     setReplNetwork(network, replServer);
     // await setReplNetwork(network, replServer);
   }
