@@ -18,6 +18,7 @@ import * as wasmcrypto from "@polkadot/wasm-crypto";
 // import * as appsconfig_endpoints from "@polkadot/apps-config/endpoints";
 // import * as appsconfig_api from "@polkadot/apps-config/api";
 import * as lodash from "lodash";
+import * as bip39 from "bip39";
 import { typesBundle as moonbeamTypesBundle } from "moonbeam-types-bundle";
 import { typesBundleForPolkadot as acalaTypesBundle } from "@acala-network/type-definitions";
 import { typesBundleForPolkadot as crustTypesBundle } from "@crustio/type-definitions";
@@ -51,6 +52,7 @@ const GlobalContext = {
     // apps_config_api: appsconfig_api,
   },
   util,
+  bip39,
   hashing,
   // node require
   fetch,
