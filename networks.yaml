@@ -9,7 +9,8 @@ nftmart-mainnet:
   provider: wss://mainnet.nftmart.io/rpc/ws
   types: types/nftmart-staging-fork2.json
 nftmart-staging:
-  provider: wss://staging-ws.nftmart.io/
+  provider: wss://staging.nftmart.io/rpc/ws
+# provider: wss://staging-ws.nftmart.io/
   types: types/nftmart-staging-fork2.json
 nftmart-staging-local:
   provider: ws://127.0.0.1:9944/
