@@ -30,6 +30,8 @@ local:
   provider: ws://127.0.0.1:9944/
 moonriver:
   provider: wss://wss.moonriver.moonbeam.network
+moonriver-local:
+  provider: ws://127.0.0.1:9944/
 acala:
   provider: wss://mandala6.laminar.codes
 crust:

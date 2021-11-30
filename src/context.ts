@@ -82,6 +82,9 @@ async function createNetworkContext(name: ChainSpec) {
     types = network.types ? loadObject(network.types) : undefined;
     // typesBundle = network.typesBundle ? loadObject(network.typesBundle) : undefined;
     // console.log(typesBundle)
+    if (name === "moonriver-local") {
+      typesBundle = moonbeamTypesBundle;
+    }
     if (name === "moonriver") {
       typesBundle = moonbeamTypesBundle;
     }
@@ -108,10 +111,14 @@ async function createNetworkContext(name: ChainSpec) {
     type: "sr25519",
     ss58Format: api.registry.chainSS58,
   });
+  let keyring_eth = new Keyring({
+    type: "ethereum",
+  });
   return {
     // global object
     api,
     keyring,
+    keyring_eth,
     types,
     provider,
   };
