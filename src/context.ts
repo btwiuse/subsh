@@ -19,7 +19,7 @@ import * as wasmcrypto from "@polkadot/wasm-crypto";
 // import * as appsconfig_api from "@polkadot/apps-config/api";
 import * as lodash from "lodash";
 import * as bip39 from "bip39";
-import { typesBundle as moonbeamTypesBundle } from "moonbeam-types-bundle";
+import { typesBundlePre900 as moonbeamTypesBundle } from "moonbeam-types-bundle";
 import { typesBundleForPolkadot as acalaTypesBundle } from "@acala-network/type-definitions";
 import { typesBundleForPolkadot as crustTypesBundle } from "@crustio/type-definitions";
 import fetch from "node-fetch";
