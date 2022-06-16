@@ -2,7 +2,7 @@ import { Command } from "commander";
 // import figlet from "figlet-promised";
 import { startRepl, runScript, run2Script, runSidecar } from "./src/commands";
 import { Package } from "./src/meta";
-import { banner } from "./src/banner";
+import { subshellBanner } from "./src/banner";
 
 async function main() {
   const program = new Command();
@@ -12,7 +12,7 @@ async function main() {
     `The missing Polkadot.js API scripting environment that lets you have SLACK while BUIDLing around Substrate.`
   );
   // program.addHelpText("before", await figlet("SubGenius"));
-  program.addHelpText("before", banner);
+  program.addHelpText("before", subshellBanner);
   program
     .option(
       "--chain <chain>",

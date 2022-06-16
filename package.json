@@ -1,9 +1,10 @@
 {
-  "name": "subgenius",
-  "version": "0.1.12",
+  "name": "subsh",
+  "version": "0.0.2",
   "main": "./dist/index.js",
   "bin": {
-    "bob": "./bin/bob"
+    "bob": "./bin/bob",
+    "subsh": "./bin/subsh"
   },
   "scripts": {
     "build": "tsc && chmod +x dist/index.js; cp -r src/views dist/src/",
