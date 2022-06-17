@@ -10,7 +10,7 @@ import replHistory from "@btwiuse/repl.history";
 import chalk from "chalk";
 import { Package } from "../meta";
 // import figlet from "figlet-promised";
-import { subshellBanner } from "../banner";
+import { showAsciiBanner } from "../banner";
 import fs from "fs";
 import YAML from "yaml";
 import { fromIndex, isValid, showValidNetworks } from "../networks";
@@ -123,10 +123,7 @@ function toPrompt(prompt) {
 }
 
 async function showBanner() {
-  //console.log(chalk.blue(await figlet("SubGenius")));
-  console.log(chalk.blue(subshellBanner));
-  console.log("The SubGenius Must Have SLACK.");
-  console.log('                                --  J. R. "Bob" Dobbs\n');
+  showAsciiBanner();
   console.log(progInfo());
   console.log();
 }

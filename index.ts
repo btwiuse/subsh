@@ -2,17 +2,15 @@ import { Command } from "commander";
 // import figlet from "figlet-promised";
 import { startRepl, runScript, run2Script, runSidecar } from "./src/commands";
 import { Package } from "./src/meta";
-import { subshellBanner } from "./src/banner";
+import { subshellBannerRight } from "./src/banner";
 
 async function main() {
   const program = new Command();
   program.name("bob");
   program.version(Package.version);
-  program.description(
-    `The missing Polkadot.js API scripting environment that lets you have SLACK while BUIDLing around Substrate.`
-  );
+  program.description('Interactive polkadot.js repl for your substarte node');
   // program.addHelpText("before", await figlet("SubGenius"));
-  program.addHelpText("before", subshellBanner);
+  program.addHelpText("before", subshellBannerRight);
   program
     .option(
       "--chain <chain>",

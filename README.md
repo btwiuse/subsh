@@ -1,24 +1,23 @@
-# subgenius
+# SubShell
 
-Named after the eponymous Slack-promoting parody religion, `subgenius` is the missing Polkadot.js API scripting environment that lets you have Slack while BUIDLing around Substrate.
+Interactive Polkadot.js REPL for Your Substrate Node.
 
-It makes your life easier when writing scripts that interact with the polkadot-js/api
+[![NPM version](https://img.shields.io/npm/v/subsh.svg?style=flat)](https://npmjs.org/package/subsh)
+[![NPM downloads](https://img.shields.io/npm/dm/subsh.svg?style=flat)](https://npmjs.org/package/subsh)
 
-[![NPM version](https://img.shields.io/npm/v/subgenius.svg?style=flat)](https://npmjs.org/package/subgenius)
-[![NPM downloads](https://img.shields.io/npm/dm/subgenius.svg?style=flat)](https://npmjs.org/package/subgenius)
-
-## How to use
-
+## Install
 ```
-$ npm install -g subgenius
+$ npm install -g subsh
 ```
 
-The main executable is named `bob` instead of `subgenius`, not only because it's shorter and easier to type, but also reminiscent of the King of Slack, J. R. "Bob" Dobbs and the famous Alice and Bob.
+## Run
 
 ```
-$ bob
+$ subsh --provider wss://rpc.polkadot.io
 ```
 
+
+<!--
 ## Features
 
 ### Interactive scripting (REPL)
@@ -30,3 +29,4 @@ $ bob
 ### Upload to IPFS
 
 ### Generate documentation from metadata
+-->

@@ -1,6 +1,6 @@
 {
   "name": "subsh",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./dist/index.js",
   "bin": {
     "bob": "./bin/bob",
@@ -89,7 +89,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/btwiuse/subgenius"
+    "url": "https://github.com/btwiuse/subshell"
   },
   "author": {
     "name": "btwiuse"
