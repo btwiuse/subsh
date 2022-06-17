@@ -42,7 +42,7 @@ export const subshellBannerLeft = `
 export function showAsciiBanner() {
   //console.log(chalk.blue(await figlet("SubGenius")));
   if (process.stdout.columns > 54) {
-    console.log(chalk.blue(subshellBannerLeft));
+    console.log(chalk.blue(subshellBannerRight));
   } else if (process.stdout.columns >= 40 ) {
     console.log(chalk.blue(subshellBanner));
   }

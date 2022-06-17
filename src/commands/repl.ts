@@ -98,11 +98,9 @@ function progInfo() {
   /* print program info from package.json */
 
   const info = {
-    " Node.js version ": process.version,
-    " SubGenius version ": Package.version,
-    " Github ": chalk.green(Package.repository.url),
-    " Author ": chalk.green(Package.author.name),
-    " License ": chalk.green(Package.license),
+    " * Node.js version ": process.version,
+    " * SubShell version ": Package.version,
+    " * Issues ": chalk.green(Package.repository.url+'/issues'),
   };
 
   return Object.keys(info)

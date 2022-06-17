@@ -16,7 +16,7 @@ api = await ApiPromise.create({ provider, types});
 ...
 ```
 
-Thanks to esbuild, it can execute snippets written in ts/mjs/js, and load dependencies from url like deno.
+Thanks to esbuild and vm2, it can execute snippets written in ts/mjs/js, and load dependencies from urls like what deno does.
 
 It's still under active development, so expect breaking changes.
 
