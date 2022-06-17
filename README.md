@@ -5,6 +5,23 @@ Interactive Polkadot.js REPL for Your Substrate Node.
 [![NPM version](https://img.shields.io/npm/v/subsh.svg?style=flat)](https://npmjs.org/package/subsh)
 [![NPM downloads](https://img.shields.io/npm/dm/subsh.svg?style=flat)](https://npmjs.org/package/subsh)
 
+SubShell at its core is a simple cli tool wrapping the following lines of code.
+
+```javascript
+#!/usr/bin/env -S node --experimental-repl-await
+const { ApiPromise, WsProvider } = require(`@polkadot/api`)
+const provider = new WsProvider(`wss://polkadot.api.onfinality.io/public-ws`);
+const types={};
+api = await ApiPromise.create({ provider, types});
+...
+```
+
+Thanks to esbuild, it can execute snippets written in ts/mjs/js, and load dependencies from url like deno.
+
+It's still under active development, so expect breaking changes.
+
+There is an online version hosted at https://subshell.xyz for you to play with.
+
 ## Install
 ```
 $ npm install -g subsh
