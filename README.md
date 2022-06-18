@@ -38,6 +38,8 @@ $ subsh --provider wss://rpc.polkadot.io
 
 🚧 UNDER CONSTRUCTION 🚧
 
+For more documentation, visit [doc.subshell.xyz](https://doc.subshell.xyz)
+
 ## License
 
 ```
