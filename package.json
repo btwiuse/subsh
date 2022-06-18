@@ -1,6 +1,8 @@
 {
   "name": "subsh",
   "version": "0.0.4",
+  "homepage": "https://subshell.xyz",
+  "documentation": "https://docs.subshell.xyz",
   "main": "./dist/index.js",
   "bin": {
     "bob": "./bin/bob",
