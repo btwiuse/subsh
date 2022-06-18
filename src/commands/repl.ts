@@ -99,7 +99,7 @@ function progInfo() {
 
   const info = {
     " * Node.js version ": process.version,
-    " * SubShell version ": Package.version,
+    " * Subshell version ": Package.version,
     " * Issues ": chalk.green(Package.repository.url+'/issues'),
   };
 
