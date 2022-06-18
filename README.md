@@ -34,6 +34,10 @@ $ npm install -g subsh
 $ subsh --provider wss://rpc.polkadot.io
 ```
 
+## Features
+
+🚧 UNDER CONSTRUCTION 🚧
+
 ## License
 
 ```
@@ -45,7 +49,6 @@ The author disclaims copyright to this source code. In place of a legal notice, 
 ```
 
 <!--
-## Features
 
 ### Interactive scripting (REPL)
 
