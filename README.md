@@ -4,6 +4,7 @@ Interactive Polkadot.js REPL for Your Substrate Node.
 
 [![NPM version](https://img.shields.io/npm/v/subsh.svg?style=flat)](https://npmjs.org/package/subsh)
 [![NPM downloads](https://img.shields.io/npm/dm/subsh.svg?style=flat)](https://npmjs.org/package/subsh)
+[![Subshell Discussion](https://img.shields.io/matrix/subshell:matrix.org)](https://matrix.to/#/#subshell:matrix.org)
 
 SubShell at its core is a simple cli tool wrapping the following lines of code.
 
