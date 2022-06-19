@@ -1,6 +1,6 @@
 {
   "name": "subsh",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "keywords": ["subsh", "subshell", "repl", "substrate", "polkadot", "kusama", "moonbeam", "acala"],
   "homepage": "https://subshell.xyz",
   "documentation": "https://doc.subshell.xyz",
