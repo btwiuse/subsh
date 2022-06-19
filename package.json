@@ -1,8 +1,9 @@
 {
   "name": "subsh",
-  "version": "0.0.4",
+  "version": "0.0.6",
+  "keywords": ["polkadot", "subshell", "substrate", "repl", "kusama", "moonbeam", "acala"],
   "homepage": "https://subshell.xyz",
-  "documentation": "https://docs.subshell.xyz",
+  "documentation": "https://doc.subshell.xyz",
   "main": "./dist/index.js",
   "bin": {
     "bob": "./bin/bob",
