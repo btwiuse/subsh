@@ -98,7 +98,7 @@ function progInfo() {
   /* print program info from package.json */
 
   const info = {
-    "🧊 Node.js version ": process.version,
+    "📦 Node.js version ": process.version,
     "🐚 Subshell version ": Package.version,
     "📖 Documentation": Package.documentation,
     "❔ Issues ": Package.repository.url+'/issues',
